@@ -1,0 +1,57 @@
+import java.util.Scanner;  
+  
+class AgeException  extends Exception    
+{    
+      
+    public AgeException (String message)    
+    {    
+        
+        super(message);    
+    }    
+}    
+   
+    
+public class CustomExceptionExample1    
+{    
+  
+      
+    static void checkEligibility (int age) throws AgeException  
+    {      
+          
+        if(age < 22){    
+                
+            throw new AgeException("You are not eligible for the exam.");   
+        }else {     
+            System.out.println("You are eligible for the exam.");     
+        }        
+    }      
+  
+    // main() method start    
+    public static void main(String args[])    
+    {    
+       
+        Scanner scan = new Scanner(System.in);  
+                  
+        // declare variable age to store the user input  
+        int age;  
+              
+        // take input from the user  
+        System.out.println("Please enter your age:");  
+        age = scan.nextInt();  
+          
+        scan.close();  
+          
+        try    
+        {    
+              
+        }    
+        catch (AgeException exception)    
+        {    
+            System.out.println("We found an excaption:");    
+   
+            // printing the message from AgeException object    
+            System.out.println(exception);  
+              
+        }         
+    }       
+}    
